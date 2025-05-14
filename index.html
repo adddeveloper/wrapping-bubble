@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="style/style.css">
+     <title>Bubble Wrap</title>
+</head>
+<body>
+
+     <audio style="display: none;" src="/assets/pop_short.MP3"></audio>
+
+     <div class="container">
+          <div class="navigation">
+               <button class="menu">menu</button>
+               <span id="score">0</span>
+               <button class="restart disable">restart</button>
+          </div>
+          <div class="bubble_holder">
+               <div class="row">
+                    <div class="bubble unpopped"></div>
+                    <div class="bubble unpopped"></div>
+                    <div class="bubble unpopped"></div>
+               </div>
+               <div class="row">
+                    <div class="bubble unpopped"></div>
+                    <div class="bubble unpopped"></div>
+                    <div class="bubble unpopped"></div>
+               </div>
+          </div>
+     </div>
+
+     <div class="snow" id="particles-js"></div>
+
+     <div class="main_menu">
+          <div class="mm_header">
+               <span class="header">POP! BUBBLE WRAP</span>
+               <span>REALLY SATISFYING BUBBLE WRAP WEBSITE. ENJOY POPPING!</span>
+          </div>
+          <button class="start">start</button>
+          <button class="instructions">instructions</button>
+          <button class="settings">settings</button>
+     </div>
+
+     <div id="instructions" class="d-none">
+          <span>instructions</span>
+     </div>
+     <div id="settings" class="d-none">
+          <span>settings</span>
+     </div>
+     
+     <script src="/script/particles.min.js"></script>
+     <script src="/script/index.js"></script>
+</body>
+</html>
