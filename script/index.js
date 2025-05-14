@@ -94,10 +94,12 @@ start.addEventListener("click", ()=>{
      menu.classList.toggle("d-none");
 })
 
-var instructions = document.querySelector(".instructions");
+var instructions = document.querySelectorAll(".instructions");
 var instructions_menu = document.querySelector("#instructions");
-instructions.addEventListener("click", ()=>{
-     instructions_menu.classList.toggle("d-none");
+instructions.forEach(e=>{
+     e.addEventListener("click", ()=>{
+          instructions_menu.classList.toggle("d-none");
+     })
 })
 
 var settings = document.querySelector(".settings");
