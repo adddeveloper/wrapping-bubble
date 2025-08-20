@@ -107,3 +107,55 @@ var settings_menu = document.querySelector("#settings");
 settings.addEventListener("click", () => {
      settings_menu.classList.toggle("d-none");
 })
+
+// --- SETTINGS LOGIC --- //
+var volumeSlider = document.querySelector("#volumeSlider");
+var sliderFill = document.querySelector(".bubble-slider-fill");
+var winterMusic = document.querySelector('audio[src="winter.mp3"]');
+winterMusic.loop = true;
+winterMusic.volume = 1;
+winterMusic.play().catch(()=>{}); // autoplay may be blocked until interaction
+
+// Sync slider fill
+function updateSliderFill() {
+    let percent = volumeSlider.value * 100;
+    sliderFill.style.width = percent + "%";
+}
+updateSliderFill();
+
+// Change volume
+volumeSlider.addEventListener("input", () => {
+    audio.volume = volumeSlider.value;        // pop sound
+    winterMusic.volume = volumeSlider.value;  // background music
+    updateSliderFill();
+});
+
+// Bubble size options
+var sizeOptions = document.querySelectorAll(".size-option");
+sizeOptions.forEach(btn => {
+    btn.addEventListener("click", () => {
+        sizeOptions.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        let newSize = parseInt(btn.dataset.size);
+        bubble.w = newSize;
+        bubble.h = newSize;
+        restart_(); // regenerate bubbles
+    });
+});
+
+// Bubble color options
+var colorOptions = document.querySelectorAll(".color-option");
+colorOptions.forEach(opt => {
+    opt.addEventListener("click", () => {
+        colorOptions.forEach(c => c.classList.remove("selected"));
+        opt.classList.add("selected");
+        let color = opt.dataset.color;
+        document.body.style.backgroundColor = color; // change background
+    });
+});
+
+// Save settings button
+var saveBtn = document.querySelector(".close-settings");
+saveBtn.addEventListener("click", () => {
+    settings_menu.classList.add("d-none");
+});
