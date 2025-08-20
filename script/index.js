@@ -128,14 +128,12 @@ settings.addEventListener("click", () => {
 // --- SETTINGS LOGIC --- //
 var volumeSlider = document.querySelector("#volumeSlider");
 var sliderFill = document.querySelector(".bubble-slider-fill");
-var allBackgroundAudio = document.querySelectorAll('audio.backgroundaudio');
+var allBackgroundAudio = document.querySelector('audio.backgroundaudio');
 
 // play + loop background audio
-allBackgroundAudio.forEach((e) => {
-     e.loop = true;
-     e.volume = 1;
-     e.play().catch(()=>{}); // ignore autoplay block
-});
+allBackgroundAudio.loop = true;
+allBackgroundAudio.volume = 1;
+allBackgroundAudio.play()
 
 // Sync slider fill
 function updateSliderFill() {
@@ -164,7 +162,10 @@ function loadSettings() {
      volumeSlider.value = settings.volume;
      audio.volume = settings.volume;
      fanfare.volume = settings.volume;
-     allBackgroundAudio.forEach(e => e.volume = settings.volume);
+
+     allBackgroundAudio.loop = true;
+     allBackgroundAudio.volume =  settings.volume;
+     allBackgroundAudio.play()
      updateSliderFill();
 
      // Apply bubble size
