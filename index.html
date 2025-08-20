@@ -6,6 +6,21 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="style/style.css">
      <title>Bubble Wrap</title>
+         
+    <!-- Standard favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+
+    <!-- PNG favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="favicon/favicon-64x64.png">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="favicon/site.webmanifest">
 </head>
 
 <body>
@@ -65,7 +80,7 @@
                </div>
                <div class="instruction-item">
                     <span class="instruction-icon">↩️</span>
-                    <span>Use the restart button to reset your score</span>
+                    <span>Use the restart button to reset the popped bubles</span>
                </div>
                <button class="close-instructions instructions">Got it!</button>
           </div>
@@ -88,19 +103,20 @@
                <div class="setting-item">
                     <div class="setting-label">Bubble Size</div>
                     <div class="bubble-size-options">
-                         <button class="size-option bubble-btn" data-size="40">Small</button>
-                         <button class="size-option bubble-btn active" data-size="50">Medium</button>
-                         <button class="size-option bubble-btn" data-size="60">Large</button>
+                         <button class="size-option bubble-btn" data-size="50">Small</button>
+                         <button class="size-option bubble-btn active" data-size="75">Medium</button>
+                         <button class="size-option bubble-btn" data-size="100">Large</button>
                     </div>
                </div>
 
                <div class="setting-item">
                     <div class="setting-label">Bubble Color</div>
                     <div class="color-options">
-                         <div class="color-option" style="background-color: #e0ecf2;" data-color="#e0ecf2"></div>
-                         <div class="color-option" style="background-color: #ffebee;" data-color="#ffebee"></div>
-                         <div class="color-option" style="background-color: #e8f5e9;" data-color="#e8f5e9"></div>
-                         <div class="color-option" style="background-color: #fff8e1;" data-color="#fff8e1"></div>
+                         <div class="color-option selected" style="background-color: #3333;" data-color="#3333"></div>
+                         <div class="color-option" style="background-color: #00aaff62;" data-color="#e0ecf2"></div>
+                         <div class="color-option" style="background-color: #ff002688;" data-color="#ffebee"></div>
+                         <div class="color-option" style="background-color: #00ff1560;" data-color="#e8f5e9"></div>
+                         <div class="color-option" style="background-color: #ffc4008c;" data-color="#fff8e1"></div>
                     </div>
                </div>
 
@@ -108,7 +124,9 @@
           </div>
      </div>
 
-     <audio src="winter.mp3" style="display: none;"></audio>
+     <audio class="backgroundaudio" src="winter.mp3" repeat autoplay style="display: none;"></audio>
+     <audio class="fanfare" src="fanfare.mp3"></audio>
+     <!-- <audio class="backgroundaudio" src="chattering.mp3" repeat autoplay style="display: none;"></audio> -->
 
      <script src="/script/particles.min.js"></script>
      <script src="/script/index.js"></script>
