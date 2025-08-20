@@ -189,7 +189,10 @@ function loadSettings() {
 volumeSlider.addEventListener("input", () => {
      audio.volume = volumeSlider.value;
      fanfare.volume = volumeSlider.value;
-     allBackgroundAudio.forEach(e => e.volume = volumeSlider.value);
+
+     allBackgroundAudio.loop = true;
+     allBackgroundAudio.volume =  volumeSlider.value;
+     allBackgroundAudio.play()
      updateSliderFill();
 });
 
